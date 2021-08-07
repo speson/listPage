@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <g>
+        <g fill="#fff" stroke="#000" transform="translate(0.073 0.073) translate(-0.073 -0.073)">
+            <rect width="20" height="20" stroke="none" rx="2"/>
+            <rect width="19" height="19" x=".5" y=".5" fill="none" rx="1.5"/>
+        </g>
+        <path fill="#000" d="M3.819 8.756a.715.715 0 1 0 .941 1.076l2.86-2.5a.715.715 0 0 0 .02-1.058L1.206.2a.715.715 0 1 0-.982 1.04l5.863 5.532z" transform="translate(0.073 0.073) translate(14.936 5.927) rotate(90)"/>
+    </g>
+</svg>

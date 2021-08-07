@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="뒤로가기" width="28" height="28" viewBox="0 0 28 28">
+    <defs>
+        <style>
+            .cls-1{fill:none}
+            .cls-2{fill:#c9c9c9}
+        </style>
+    </defs>
+    <path id="Shape" d="M9.579-3.826L2.456-9.65a1.674 1.674 0 0 0-2.035 0 1.032 1.032 0 0 0 0 1.664l6.1 4.992L.421 2a1.032 1.032 0 0 0 0 1.664 1.674 1.674 0 0 0 2.035 0l7.123-5.826A1.075 1.075 0 0 0 10-2.994a1.075 1.075 0 0 0-.421-.832z" transform="translate(9 16.994)" class="cls-2"/>
+    <g id="그룹_4813" transform="translate(-1230 -789)">
+        <path id="사각형_3419" d="M0 0H28V28H0z" class="cls-1" transform="translate(1230 789)"/>
+        <g id="Shape-2" transform="translate(1239 796)">
+            <path id="Shape-3" d="M9.579-3.826L2.456-9.65a1.674 1.674 0 0 0-2.035 0 1.032 1.032 0 0 0 0 1.664l6.1 4.992L.421 2a1.032 1.032 0 0 0 0 1.664 1.674 1.674 0 0 0 2.035 0l7.123-5.826A1.075 1.075 0 0 0 10-2.994a1.075 1.075 0 0 0-.421-.832z" class="cls-1" transform="translate(0 9.994)"/>
+        </g>
+    </g>
+</svg>
