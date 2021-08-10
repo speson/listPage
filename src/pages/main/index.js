@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 // import { useHistory, useParams } from "react-router";
 import { css } from "@emotion/react";
 import { useQuery } from "react-query";
@@ -9,7 +9,14 @@ import SelectBox from "../../components/SelectBox";
 import Loading from "../../components/Loading";
 import Button from "../../components/Button";
 import Dialog from "../../components/Dialog";
-import { fetchList, genderList, raceList, ethnicityList } from "../../api";
+import Charts from "./charts";
+import {
+  fetchList,
+  genderList,
+  raceList,
+  ethnicityList,
+  chartStats,
+} from "../../api";
 
 // 테이블 정보
 import { MAIN_TABLE } from "./tableInfo";
@@ -169,11 +176,46 @@ export default function Main() {
     },
   ];
 
+  // 차트데이터 호출
+  const chartQuery = useQuery(["charts-stats"], () => chartStats());
+
+  const chartData = useMemo(() =>
+    chartQuery.isLoading ? [] : chartQuery.data.stats
+  );
+
+  const [genderData, setGenderData] = useState([]);
+
+  useEffect(() => {
+    // 성별 데이터
+    let female_cnt = 0;
+    let male_cnt = 0;
+    chartData.forEach((d) => {
+      if (d.gender === "F") {
+        female_cnt += d.count;
+      } else if (d.gender === "M") {
+        male_cnt += d.count;
+      }
+    });
+    setGenderData([
+      {
+        name: "여성",
+        label: "F",
+        value: female_cnt,
+      },
+      {
+        name: "남성",
+        label: "M",
+        value: male_cnt,
+      },
+    ]);
+  }, [chartData]);
+
   if (
     listQuery.isLoading ||
     genderQuery.isLoading ||
     raceQuery.isLoading ||
-    ethnicityQuery.isLoading
+    ethnicityQuery.isLoading ||
+    chartQuery.isLoading
   ) {
     return <Loading type="load" />;
   }
@@ -181,6 +223,13 @@ export default function Main() {
   return (
     <div css={container}>
       <div css={contents}>
+        {/* 성별 차트 */}
+        <Charts
+          data={genderData}
+          opt={inputs.gender}
+          colors={["#FFBB28", "#00C49F"]}
+        />
+
         {/* 페이지당 Row 개수*/}
         <div css={row_select}>
           <Button
@@ -239,7 +288,8 @@ export default function Main() {
 
 const container = css`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
 `;
@@ -247,7 +297,7 @@ const container = css`
 const contents = css`
   width: 1200px;
   margin-top: 50px;
-  height: auto;
+  height: 100%;
 `;
 
 const row_select = css`

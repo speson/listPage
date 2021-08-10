@@ -98,3 +98,18 @@ export const patientDetail = async (person_id) => {
   };
   return promise;
 };
+
+// 차트 데이터
+export const chartStats = async () => {
+  const source = CancelToken.source();
+  const promise = await axios
+    .get(baseUrl + "/patient/stats", {
+      params: {},
+      cancelToken: source.token,
+    })
+    .then((res) => res.data);
+  promise.cancel = () => {
+    source.cancel("Query wsa cancelled by React Query");
+  };
+  return promise;
+};

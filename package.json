@@ -22,6 +22,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-spinners": "^0.11.0",
+    "recharts": "^2.0.10",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
