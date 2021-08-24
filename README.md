@@ -23,3 +23,9 @@
 
 1. 터미널(CMD)를 실행시킨 후 yarn (or npm install) 입력
 2. 라이브러리 설치가 완료된 후 yarn start (or npm run start) 입력
+
+
+### 기술스택
+- React
+- React-Query
+- Emotion
