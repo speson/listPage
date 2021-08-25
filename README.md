@@ -1,6 +1,6 @@
 ### 이용안내
 
-# React Query를 이용한 테이블 제작
+# React Query를 이용한 List page 제작
 ## 기능
 - 컬럼별 정렬기능 : Default(정렬없음) | ASC | DESC
 - 페이지당 데이터 조회개수 선택 : 5 | 10(Defaul) | 15 | 20 | 25 | 30
